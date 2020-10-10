@@ -1,0 +1,228 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+<style type="text/css">
+<!--
+    .error { color:red; line-height:1.5; }
+-->
+</style>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+    <h1>Instructions</h1>
+<p>
+    Please judge how useful a <strong>DATASET</strong> of a webpage is for answering a given <strong>REQUEST</strong>. <br>
+    Please carefully read a given <strong>REQUEST</strong>, visit a webpage describing a <strong>DATASET</strong>, and give a usefulness score (0, 1, or 2) to each of the datasets.</p>
+<h2>
+	Rules</h2>
+<ol>
+	<li> Carefully read a <strong>REQUEST</strong> (Note: this page contains a few types of requests.)</li>
+	<li> Make sure that you visit a webpage that describes a <strong>DATASET</strong>, and judge how useful the <strong>DATASET</strong> is for answering the <strong>REQUEST</strong>.</li>
+	<li>
+		Usefulness score is defined as:
+		<ul>
+			<li>0: (Useless) The <strong>DATASET</strong> is not useful to answer the <strong>REQUEST</strong> at all, or was not accessible for some reasons.</li>
+			<li>1: (Partially useful) The <strong>DATASET</strong> is useful to partially answer the <strong>REQUEST</strong>, but cannot fully answer the <strong>REQUEST</strong>.</li>
+			<li>2: (Highly useful) The <strong>DATASET</strong> is useful to fully answer the <strong>REQUEST</strong>.</li>
+		</ul>
+	</li>
+</ol>
+
+<h2>
+	<strong><span style="background-color:#FFFF00">Cautions</span></strong></h2>
+
+<ul>
+	<li><span style="background-color:#FFFF00">You will be rejected if the website is not accessed.</span></li>
+	<li><span style="background-color:#FFFF00">You will be rejected if the work time is too short.</span></li>
+	<li>There are some <strong>REQUEST</strong> and <strong>DATASET</strong> for which a true usefulness score is known.
+	    <span style="background-color:#FFFF00">You will be rejected if your answer is very different from the true answer.</span></li>
+	<li><span style="background-color:#FFFF00">You will be rejected if your work result has been rejected before.</span></li>	    
+</ul>
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+
+    <div style="display: none;">${known}</div>
+
+    <div>
+	<p>1. <span style="color: white">${qid1} ${did1}</span></p>
+	<p><strong>REQUEST</strong>: ${topic1}</p>
+	<p><strong>DATASET</strong>: <a href="${url1}" target="_blank">LINK</a></p>
+
+    <crowd-radio-group>
+	    <crowd-radio-button name="option1_0" value="0">0: Useless</crowd-radio-button>
+	    <crowd-radio-button name="option1_1" value="1">1: Partially useful</crowd-radio-button>
+	    <crowd-radio-button name="option1_2" value="2">2: Highly useful</crowd-radio-button>
+	</crowd-radio-group>
+	</div>
+
+    <div style="height: 2em;">&nbsp;</div>
+
+
+    <div>
+	<p>2. <span style="color: white">${qid2} ${did2}</span></p>
+	<p><strong>REQUEST</strong>: ${topic2}</p>
+	<p><strong>DATASET</strong>: <a href="${url2}" target="_blank">LINK</a></p>
+
+    <crowd-radio-group>
+	    <crowd-radio-button name="option2_0" value="0">0: Useless</crowd-radio-button>
+	    <crowd-radio-button name="option2_1" value="1">1: Partially useful</crowd-radio-button>
+	    <crowd-radio-button name="option2_2" value="2">2: Highly useful</crowd-radio-button>
+	</crowd-radio-group>
+	</div>
+
+    <div style="height: 2em;">&nbsp;</div>
+
+
+    <div>
+	<p>3. <span style="color: white">${qid3} ${did3}</span></p>
+	<p><strong>REQUEST</strong>: ${topic3}</p>
+	<p><strong>DATASET</strong>: <a href="${url3}" target="_blank">LINK</a></p>
+
+    <crowd-radio-group>
+	    <crowd-radio-button name="option3_0" value="0">0: Useless</crowd-radio-button>
+	    <crowd-radio-button name="option3_1" value="1">1: Partially useful</crowd-radio-button>
+	    <crowd-radio-button name="option3_2" value="2">2: Highly useful</crowd-radio-button>
+	</crowd-radio-group>
+	</div>
+
+    <div style="height: 2em;">&nbsp;</div>
+
+
+    <div>
+	<p>4. <span style="color: white">${qid4} ${did4}</span></p>
+	<p><strong>REQUEST</strong>: ${topic4}</p>
+	<p><strong>DATASET</strong>: <a href="${url4}" target="_blank">LINK</a></p>
+
+    <crowd-radio-group>
+	    <crowd-radio-button name="option4_0" value="0">0: Useless</crowd-radio-button>
+	    <crowd-radio-button name="option4_1" value="1">1: Partially useful</crowd-radio-button>
+	    <crowd-radio-button name="option4_2" value="2">2: Highly useful</crowd-radio-button>
+	</crowd-radio-group>
+	</div>
+
+    <div style="height: 2em;">&nbsp;</div>
+
+
+    <div>
+	<p>5. <span style="color: white">${qid5} ${did5}</span></p>
+	<p><strong>REQUEST</strong>: ${topic5}</p>
+	<p><strong>DATASET</strong>: <a href="${url5}" target="_blank">LINK</a></p>
+
+    <crowd-radio-group>
+	    <crowd-radio-button name="option5_0" value="0">0: Useless</crowd-radio-button>
+	    <crowd-radio-button name="option5_1" value="1">1: Partially useful</crowd-radio-button>
+	    <crowd-radio-button name="option5_2" value="2">2: Highly useful</crowd-radio-button>
+	</crowd-radio-group>
+	</div>
+
+    <div style="height: 2em;">&nbsp;</div>
+
+
+    <div>
+	<p>6. <span style="color: white">${qid6} ${did6}</span></p>
+	<p><strong>REQUEST</strong>: ${topic6}</p>
+	<p><strong>DATASET</strong>: <a href="${url6}" target="_blank">LINK</a></p>
+
+    <crowd-radio-group>
+	    <crowd-radio-button name="option6_0" value="0">0: Useless</crowd-radio-button>
+	    <crowd-radio-button name="option6_1" value="1">1: Partially useful</crowd-radio-button>
+	    <crowd-radio-button name="option6_2" value="2">2: Highly useful</crowd-radio-button>
+	</crowd-radio-group>
+	</div>
+
+    <div style="height: 2em;">&nbsp;</div>
+
+
+    <div>
+	<p>7. <span style="color: white">${qid7} ${did7}</span></p>
+	<p><strong>REQUEST</strong>: ${topic7}</p>
+	<p><strong>DATASET</strong>: <a href="${url7}" target="_blank">LINK</a></p>
+
+    <crowd-radio-group>
+	    <crowd-radio-button name="option7_0" value="0">0: Useless</crowd-radio-button>
+	    <crowd-radio-button name="option7_1" value="1">1: Partially useful</crowd-radio-button>
+	    <crowd-radio-button name="option7_2" value="2">2: Highly useful</crowd-radio-button>
+	</crowd-radio-group>
+	</div>
+
+    <div style="height: 2em;">&nbsp;</div>
+
+
+    <div>
+	<p>8. <span style="color: white">${qid8} ${did8}</span></p>
+	<p><strong>REQUEST</strong>: ${topic8}</p>
+	<p><strong>DATASET</strong>: <a href="${url8}" target="_blank">LINK</a></p>
+
+    <crowd-radio-group>
+	    <crowd-radio-button name="option8_0" value="0">0: Useless</crowd-radio-button>
+	    <crowd-radio-button name="option8_1" value="1">1: Partially useful</crowd-radio-button>
+	    <crowd-radio-button name="option8_2" value="2">2: Highly useful</crowd-radio-button>
+	</crowd-radio-group>
+	</div>
+
+    <div style="height: 2em;">&nbsp;</div>
+
+
+    <div>
+	<p>9. <span style="color: white">${qid9} ${did9}</span></p>
+	<p><strong>REQUEST</strong>: ${topic9}</p>
+	<p><strong>DATASET</strong>: <a href="${url9}" target="_blank">LINK</a></p>
+
+    <crowd-radio-group>
+	    <crowd-radio-button name="option9_0" value="0">0: Useless</crowd-radio-button>
+	    <crowd-radio-button name="option9_1" value="1">1: Partially useful</crowd-radio-button>
+	    <crowd-radio-button name="option9_2" value="2">2: Highly useful</crowd-radio-button>
+	</crowd-radio-group>
+	</div>
+
+    <div style="height: 2em;">&nbsp;</div>
+
+
+    <div>
+	<p>10. <span style="color: white">${qid10} ${did10}</span></p>
+	<p><strong>REQUEST</strong>: ${topic10}</p>
+	<p><strong>DATASET</strong>: <a href="${url10}" target="_blank">LINK</a></p>
+
+    <crowd-radio-group>
+	    <crowd-radio-button name="option10_0" value="0">0: Useless</crowd-radio-button>
+	    <crowd-radio-button name="option10_1" value="1">1: Partially useful</crowd-radio-button>
+	    <crowd-radio-button name="option10_2" value="2">2: Highly useful</crowd-radio-button>
+	</crowd-radio-group>
+	</div>
+
+    <div style="height: 2em;">&nbsp;</div>
+
+
+    <p id="errormsg" class="error"></p>
+</crowd-form>
+
+<script type="text/javascript">
+
+function isRadioButtonValid(index) {
+    var el0 = document.querySelector("crowd-radio-button[name='option" + index + "_0']");
+    var el1 = document.querySelector("crowd-radio-button[name='option" + index + "_1']");
+    var el2 = document.querySelector("crowd-radio-button[name='option" + index + "_2']");
+    return [el0, el1, el2].some(x => x.checked);
+}
+
+function validateForm() {
+    var QUESTION_NUM = 10;
+    var isValid = true;
+    document.querySelector('#errormsg').innerHTML = "<ul>";
+    for (var i = 1; i <= QUESTION_NUM; i++) {
+        if (!isRadioButtonValid(i)) {
+            document.querySelector('#errormsg').innerHTML += "<li>One of the radio buttons must be selected for Request " + i + ".</li>";
+            isValid = false;
+        }
+    }
+    document.querySelector('#errormsg').innerHTML += "</ul>";
+    return isValid;
+}
+
+document.querySelector('crowd-form').onsubmit = function(e) {
+    if (!validateForm()) {
+        e.preventDefault();
+    }
+}
+
+</script>
